@@ -7,6 +7,7 @@
     background-color: #e3cdb5;
     height: 100vh;
     position: relative;
+    justify-content: space-between;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .navbar{
@@ -42,6 +43,7 @@ ul li a:hover{
     color: orange;
 }
 .info{
+    position: relative;
     margin-left: 55%;
     margin-bottom: 12%;
 }
@@ -107,9 +109,8 @@ ul li a:hover{
     display: flex;
     justify-content: center;
     gap: 20px; /* Space between icons */
-    margin-bottom: 20px;
     position: relative;
-    bottom: 28%;
+    bottom: 25%;
     margin-left: 270px;
 }
 
@@ -133,6 +134,7 @@ ul li a:hover{
     transform: scale(1.1); /* Slight zoom effect */
 }
 
+/* ----ABout Section -----*/
 
 .about {
     display: flex;
@@ -199,41 +201,65 @@ ul li a:hover{
     transform: scale(1.05); /* Slight zoom on hover */
 }
 
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column; /* Stack text and image vertically */
+        align-items: center;
+        padding: 20px;
+    }
 
-/* Skills Section */
+    .about .text {
+        text-align: center;
+        padding: 20px;
+    }
+
+    .about .text h1 {
+        font-size: 2em; /* Reduce heading size */
+    }
+
+    .about .text p {
+        font-size: 18px; /* Slightly smaller text */
+        line-height: 26px;
+    }
+
+    .about .myimage img {
+     display: none;
+    }
+}
+
+
+/* ------------Skills Section --------*/
 #skills {
-    padding: 50px;
+    padding: 50px 20px; /* Added side padding for smaller screens */
     background-color: #e6c7ab;
     font-family: 'Arial', sans-serif;
     color: #333;
     text-align: center;
     overflow: hidden;
 } 
+
+
 .images {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
-    gap: 70px;
+    gap: 40px; /* Reduced gap for better spacing on smaller screens */
+    flex-wrap: wrap; /* Wraps images on smaller screens */
 }
-.skills img{
+
+.skills img {
     width: 120px;
     height: auto;
 }
-.images  img[alt="html1"]{
-    width: 75px; 
-    height: auto;
-}
-.images  img[alt="css"]{
-    width: 75px; 
-    height: auto;
-}
-.images  img[alt="js"]{
+
+.images img[alt="html1"], 
+.images img[alt="css"], 
+.images img[alt="js"] {
     width: 75px; 
     height: auto;
 }
 
-/* Skills Section Heading */
 #skills .heading h1 {
     font-size: 2.5rem;
     font-weight: bold;
@@ -258,7 +284,6 @@ ul li a:hover{
     border-radius: 4px;
 }
 
-/*skills Description Text */
 #skills .description p {
     font-size: 1.2rem;
     line-height: 1.6;
@@ -347,18 +372,26 @@ ul li a:hover{
     }
 }
 
-/* Responsive Styling */
 @media (max-width: 768px) {
+    #skills {
+        padding: 40px 15px; /* Reduced padding for smaller screens */
+    }
+
     #skills .list p {
-        width: 90%;
+        width: 90%; /* Expand skill cards to fit the screen width */
+    }
+
+    .images {
+        gap: 20px; /* Reduce gap between images */
+    }
+
+    .skills img {
+        width: 90px; /* Scale down image size */
     }
 }
 
 
-
-
-
-/* My work  */
+/* ---------My work -------- */
 #my-work {
     padding: 50px;
     background-color: #e4c1a3;
@@ -427,7 +460,6 @@ ul li a:hover{
     margin-bottom: 20px;
 }
 
-/* Links */
 #my-work a {
     color: chocolate;
     font-weight: bold;
@@ -457,12 +489,39 @@ ul li a:hover{
     }
 }
 
+@media (max-width: 768px) {
+    #my-work {
+        padding: 40px 15px;
+    }
+
+    #my-work div {
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    #my-work h1 {
+        font-size: 2rem;
+    }
+
+    #my-work h2 {
+        font-size: 1.5rem;
+    }
+
+    #my-work h4 {
+        font-size: 1rem;
+    }
+
+    #my-work p {
+        font-size: 0.9rem;
+    }
+}
 
 
-/* Contact Me Section */
+
+/*-------- Contact Me Section-------- */
 .contact {
-    padding: 40px;
-    background-color: #e8cbb1;;
+    padding: 40px 20px;
+    background-color: #e8cbb1;
     text-align: center;
     font-family: Arial, sans-serif;
 }
@@ -471,10 +530,13 @@ ul li a:hover{
     font-size: 2.5em;
     color: #4a4a4a;
     margin-bottom: 20px;
+    text-transform: uppercase;
 }
-.contact h1 span{
+
+.contact h1 span {
     color: chocolate;
 }
+
 .contact h1::after {
     content: '';
     display: block;
@@ -485,64 +547,14 @@ ul li a:hover{
     border-radius: 4px;
 }
 
+/* Contact Container */
 .contact-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
-}
-
-.contact-info {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
-}
-
-.contact-info div {
-    margin-bottom: 20px;
-}
-
-.contact-info ion-icon {
-    font-size: 2em;
-    color: chocolate;
-    margin-right: 10px;
-}
-
-.contact-info h3 {
-    font-size: 1.2em;
-    color: #4a4a4a;
-    margin: 5px 0;
-}
-
-.contact-info p {
-    font-size: 1em;
-    color: #6a6a6a;
-}
-
-/* Contact Form */
-.contact-me {
-    padding: 60px 0;
-    background-color: #f0ddbb6e; /* Peach background */
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding-bottom: 20px;
-    margin-bottom: 0;
-}
-
-.contact-me h1 {
-    font-size: 2.5em;
-    color: #4a4a4a;
-    margin-bottom: 30px;
-}
-
-/* Adjust container */
-.contact-container {
-    display: flex;
     justify-content: center;
     align-items: flex-start;
-    gap: 40px;
-    max-width: 1000px; /* Smaller container */
+    gap: 30px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 20px;
     background-color: #f2dfd4;
@@ -553,11 +565,14 @@ ul li a:hover{
 /* Contact Info */
 .contact-info {
     flex: 1;
+    min-width: 280px;
     text-align: left;
 }
 
 .contact-info div {
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
 }
 
 .contact-info ion-icon {
@@ -569,7 +584,7 @@ ul li a:hover{
 .contact-info h3 {
     font-size: 1.2em;
     color: #4a4a4a;
-    margin: 5px 0;
+    margin: 0;
 }
 
 .contact-info p {
@@ -580,6 +595,7 @@ ul li a:hover{
 /* Contact Form */
 .contact-form {
     flex: 1;
+    min-width: 280px;
     text-align: left;
 }
 
@@ -603,30 +619,35 @@ ul li a:hover{
     border: 1px solid #ddd;
     border-radius: 5px;
     font-size: 1em;
+    background-color: #fff;
 }
 
 .contact-form button {
+    width: 100%;
     padding: 10px 20px;
     background-color: chocolate;
     color: white;
     border: none;
     border-radius: 5px;
-    cursor: pointer;
     font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 .contact-form button:hover {
     background-color: #ff5e00;
 }
 
-/* Footer Styling */
+/* Footer Section */
 footer {
     background-color: #333;
-    color: white;
+    color: #fff;
     text-align: center;
     padding: 20px 0;
-    margin-top: 0;
-    color: #fff;
+}
+
+.footer-content {
+    padding: 20px;
 }
 
 .footer-content h3 {
@@ -659,10 +680,11 @@ footer {
     font-weight: bold;
     display: flex;
     align-items: center;
+    gap: 5px;
 }
 
 .socials li a:hover {
-    color:  chocolate;
+    color: chocolate;
 }
 
 .footer-bottom {
@@ -671,6 +693,108 @@ footer {
     padding-top: 10px;
     font-size: 0.9em;
 }
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+    }
+
+    .contact-form,
+    .contact-info {
+        text-align: center;
+    }
+
+    .contact-form button {
+        width: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .socials {
+        flex-direction: column;
+        align-items: center; /* Center icons when stacked */
+    }
+
+    .socials li {
+        margin-bottom: 10px; /* Add spacing between stacked items */
+        gap: 2px;
+    }
+}
+
+@media (max-width: 768px) { 
+    .navbar {
+        padding: 10px;
+        align-items: center;
+    }
+
+    .logo {
+        width: 20%;
+    }
+
+    ul {
+        align-items: center;
+        gap: 10px;
+    }
+
+    ul li a {
+        font-size: 16px;
+    }
+
+    .info {
+        margin-left: 0;
+        text-align: center;
+        margin-bottom: 5%;
+        padding: 0 10px; /* Adding some padding for better alignment */
+    }
+
+    .info h1 {
+        font-size: 28px;
+    }
+
+    .info h3 {
+        font-size: 16px;
+        line-height: 1.4;
+    }
+
+    .info h2, .info h4 {
+        font-size: 18px;
+    }
+
+    .image {
+        width: 100%;
+        height: auto;
+        position: relative;
+        display: flex;
+        justify-content: center; /* Center the image */
+        
+    }
+
+    .image img {
+        height: auto;
+        width: 120%; /* Keep image size responsive */
+        border-radius: 50%;
+        position: absolute;
+        right: -10%;
+        top: 90px;
+      }
+
+    .social-icons {
+        display: flex;
+        justify-content: center;
+        position: relative;
+        gap: 15px; /* Space between icons */
+        margin-top: 220px; /* Space below the image */
+        margin-left: 20px;
+    }
+
+    .social-icons a {
+        width: 35px;
+        height: 35px;
+        font-size: 20px;
+    }
+}
+
 
 
 
