@@ -705,6 +705,60 @@ header ul li a:hover {
     background-color: #ff5e00;
 }
 
+
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .contact-info {
+        width: 100%;
+    }
+
+    .contact-info div p{
+        width: 80%;
+        text-align: center;
+    }
+
+    .contact-info div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .contact-info ion-icon {
+        margin-right: 0;
+    }
+
+    .contact-form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .contact-form p {
+        text-align: center;
+        width: 80%;
+    }
+    .contact-form input,
+    .contact-form textarea {
+        width: 80%;
+    }
+    .contact-form button {
+        width: 80%;
+    }
+}
+
+
+
+
 /* Footer Section */
 footer {
     background-color: #333;
@@ -759,22 +813,6 @@ footer {
     border-top: 1px solid #555;
     padding-top: 10px;
     font-size: 0.9em;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-
-    .contact-form,
-    .contact-info {
-        text-align: center;
-    }
-
-    .contact-form button {
-        width: auto;
-    }
 }
 
 @media (max-width: 480px) {
