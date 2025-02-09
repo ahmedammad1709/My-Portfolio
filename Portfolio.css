@@ -164,7 +164,7 @@ header ul li a:hover {
 
 .image img {
     border-radius: 50%;
-    width: 265px;
+    width: 310px;
     height: 295%;
     object-fit: cover;
     transition: transform 0.3s ease;
@@ -290,12 +290,12 @@ header ul li a:hover {
         font-size: 18px; /* Slightly smaller text */
         line-height: 26px;
     }
-
-    .about .myimage img {
-     display: none;
-    }
 }
-
+@media (max-width: 950px) {
+    .about .myimage img {
+        display: none;
+       }
+}
 
 /* ------------Skills Section --------*/
 #skills {
