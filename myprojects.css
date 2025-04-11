@@ -1,0 +1,139 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    line-height: 19px;
+}
+
+header {
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    height: 60px;
+    background-color: #1E1E2F;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    padding: 0 20px;
+}
+
+header #image img {
+    height: 75px;
+}
+
+body {
+    background-color: #1E1E2F;
+    font-family: 'Poppins', sans-serif;
+    color: #F0F0F0;
+    margin: 0;
+    padding: 0;
+}
+
+.projects {
+    padding: 60px 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.project {
+    background: #2C2C3E;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin-bottom: 40px;
+    border-left: 6px solid #00BFFF;
+    transition: all 0.3s ease-in-out;
+}
+
+.project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 191, 255, 0.4);
+}
+
+.project h1 {
+    font-size: 2.2rem;
+    color: #FFD700;
+    margin-bottom: 20px;
+}
+
+.project h2 {
+    font-size: 1.5rem;
+    color: #00BFFF;
+    margin-top: 30px;
+    margin-top: 10px;
+}
+
+.project p {
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 10px;
+    color: #E0E0E0;
+}
+
+.project ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 20px;
+    margin-left: 16px;
+}
+
+.project li {
+    font-weight: 600;
+    margin-top: 15px;
+    color: #FFD700;
+    margin-left: 16px;
+}
+
+.project .ul {
+    font-weight: 400;
+    color: #CFCFCF;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+a {
+    color: #00BFFF;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.feature-block {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    margin: 20px 0;
+  }
+  
+  .feature-block .text {
+    flex: 1;
+  }
+  
+.feature-block .img{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+.feature-block .img img {
+    width: 100%;
+    max-width: 260px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+
+}
+  
+  /* 📱 Responsive layout for small screens */
+@media (max-width: 840px) {
+    .feature-block {
+      flex-direction: column;
+    }
+  
+    .feature-block .img img {
+      max-width: 100%;
+      margin-top: 15px;
+    }
+}  
+
+
