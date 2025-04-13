@@ -7,18 +7,95 @@
 
 header {
     display: flex;
-    /* justify-content: space-between; */
+    position: fixed;
+    width: 100%;
     align-items: center;
-    height: 60px;
-    background-color: #1E1E2F;
+    justify-content: space-between;
+    height: 55px;
+    background: rgba(30, 30, 47, 0.7); /* semi-transparent */
+    backdrop-filter: blur(10px); /* blur effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    padding: 0 20px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* optional line */
 }
+#menu-btn{
+    font-size: 33px;
+    cursor: pointer;
+    margin-right: 35px;
+} 
 
 header #image img {
-    height: 75px;
+    height: 70px;
 }
+
+  
+ /* Side menu styling */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: #111827; /* dark navy */
+    color: white;
+    padding-top: 60px;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+  
+.side-menu ul {
+    list-style-type: none;
+    padding: 0;
+}
+  
+.side-menu ul li {
+    padding: 15px 20px;
+}
+  
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+.side-menu ul li a:hover{
+    color: #00BFFF;
+}
+  
+.side-menu.show {
+    right: 0;
+}
+
+.collapsible-header {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #2a2a3d;
+    color: white;
+    padding: 12px 0;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+  
+  .aroww {
+    transition: transform 0.3s ease;
+  }
+  
+  .collapsible-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  .collapsible-content.show {
+    display: block;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+  
 
 body {
     background-color: #1E1E2F;
@@ -52,7 +129,8 @@ body {
 .project h1 {
     font-size: 2.2rem;
     color: #FFD700;
-    margin-bottom: 20px;
+    line-height: 35px;
+
 }
 
 .project h2 {
@@ -70,17 +148,23 @@ body {
 }
 
 .project ul {
-    list-style-type: none;
+    list-style-type: disc;
     padding-left: 0;
     margin-top: 20px;
-    margin-left: 16px;
+    margin-left: 18px;
+    color: #FFD700;
 }
 
 .project li {
     font-weight: 600;
     margin-top: 15px;
-    color: #FFD700;
+    /* color: #FFD700; */
     margin-left: 16px;
+}
+
+.project ol{
+    list-style-type: disc;
+    margin-left: 18px;
 }
 
 .project .ul {
@@ -137,3 +221,105 @@ a:hover {
 }  
 
 
+/* -------Footer-------- */
+footer{
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 20px 50px 20px;
+    /* margin-bottom: 3%; */
+    background-color: #141b29;
+}
+
+footer .footerbody{
+    display: flex;
+    flex-direction: column;
+}
+
+footer .image img{
+    width: 25%;
+}
+#footerOne{
+    margin-left: 4%;
+}
+
+footer h2{
+    /* color: #00BFFF; */
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+footer a{
+    text-decoration: none;
+    color: white;
+    line-height: 20px;
+    margin-top: 10px;
+}
+
+footer a:hover{
+    text-decoration: none;
+    color: #00BFFF;
+}
+footer #footerTwo{
+    margin-left: -16%;
+}
+
+footer #footerfour{
+    margin-right: 8%;
+}
+
+.rights{
+    text-align: center;
+    justify-content: center;
+    border-top: 1px solid white;
+    padding: 10px;
+    background-color: #141b29;
+}
+
+.socials {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.socials li {
+    display: inline-block;
+}
+
+.socials li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.8em;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.socials li a:hover {
+    color: #00BFFF;
+}
+
+@media (max-width: 500px) { 
+    footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    footer #footerOne{
+        margin-right: 0%;
+    }
+    footer #footerTwo{
+        margin-left: 0%;
+        /* margin-top: 10%; */
+    }
+    footer #footerfour{
+        margin-right: 0%;
+    }
+    footer .footerbody{
+        margin-top: 10%;
+    }
+
+}
