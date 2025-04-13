@@ -49,38 +49,66 @@ header ul li a:hover{
     font-size: 22px;
 }
 
-
 #menu-btn {
-    display: none; /* Hide by default */
+    display: none;
     font-size: 30px;
     cursor: pointer;
+    color: white;
+    margin-right: 30px;
 }
+
+/* Side Menu */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -350px;
+    width: 350px;
+    height: 100%;
+    background-color: #111827;
+    padding-top: 60px;
+    transition: 0.3s ease;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    z-index: 1000;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+}
+
+.side-menu ul li {
+    padding: 15px 20px;
+}
+
+.side-menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+}
+
+.side-menu ul li a:hover {
+    color: #00BFFF;
+}
+
+.side-menu.show {
+    right: 0;
+}
+
 
 @media (max-width: 730px) {
     /* Hide default navigation */
-    header ul {
+    .desktop-nav {
         display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        background-color: #e3cdb5;
-        text-align: center;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    }
-
-    /* Show menu when toggled */
-    .show-menu {
-        display: flex;
-    }
-
-    header ul li {
-        padding: 10px 0;
     }
 
     #menu-btn {
-        display: block; /* Show menu button */
+        display: block;
+    }
+}
+@media (max-width: 730px) {
+    .side-menu {
+        right: -250px;
+        width: 250px;
     }
 }
 
@@ -787,6 +815,17 @@ footer {
 
     .contact-form button {
         width: auto;
+    }
+}
+@media (max-width: 370px) {
+    .contact-form input{
+        width: 80%;
+    }
+    .contact-form textarea{
+        width: 80%;
+    }
+    #email{
+
     }
 }
 
