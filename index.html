@@ -16,30 +16,60 @@
 
     <script>
         function toggleMenu() {
-            var navLinks = document.getElementById("nav-links");
-            navLinks.classList.toggle("active");
+        document.getElementById("sideMenu").classList.toggle("show");
+    }
+
+    // Close side menu when a link is clicked
+    document.querySelectorAll("#sideMenu a").forEach(link => {
+        link.addEventListener("click", () => {
+            document.getElementById("sideMenu").classList.remove("show");
+        });
+    });
+
+    // Close side menu when clicking outside
+    document.addEventListener("click", function(event) {
+        const menuBtn = document.getElementById("menu-btn");
+        const sideMenu = document.getElementById("sideMenu");
+        if (!sideMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+            sideMenu.classList.remove("show");
         }
+    });
+    // ----For ChatBot---
   (function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="dCAhMX-YZZCs4MmDdLwe0";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
         
     </script>
     
 </head>
 <body>
-     <header>
+    <header>
         <div id="image">
             <img src="Assets/logo.png" alt="logo">
         </div>
-
-        <ul id="nav-links">
+    
+        <!-- Desktop Nav -->
+        <ul class="desktop-nav">
             <li><a href="#info">HOME</a></li>
-                <li><a href="#about">ABOUT</a></li>
-                <li><a href="#skills">SKILLS</a></li>
-                <li><a href="#my-work">MY WORK</a></li>
-                <li><a href="#contact">CONTACT</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#my-work">MY WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
         </ul>
-
+    
         <div id="menu-btn" onclick="toggleMenu()">☰</div>
     </header>
+    
+    <!-- Side Menu for Mobile -->
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="#info">HOME</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#skills">SKILLS</a></li>
+            <li><a href="#my-work">MY WORK</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+        </ul>
+    </div>
+    
+
 
     
     <div class="main">
@@ -201,7 +231,7 @@
             <div>
                 <ion-icon name="mail-outline"></ion-icon>
                 <h3>Email : &nbsp;</h3>
-                <p>ahmedammad1709@gmail.com</p>
+                <p id="email">ahmedammad2006@ gmail.com</p>
             </div>
         </div>
 
