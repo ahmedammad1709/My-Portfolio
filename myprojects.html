@@ -5,164 +5,694 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projects</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="myprojects.css">
+    <script>
+        window.onload = function () {
+            const menu = document.getElementById("sideMenu");
+            const toggle = document.getElementById("menu-btn");
+            const menuLinks = document.querySelectorAll('#sideMenu ul li a');
+
+            // Toggle side menu
+            toggle.addEventListener("click", function () {
+                menu.classList.toggle("show");
+            });
+
+            // Close menu on link click
+            menuLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    menu.classList.remove('show');
+                });
+            });
+
+            // Close menu when clicking outside
+            document.addEventListener('click', function (e) {
+                if (!menu.contains(e.target) && !toggle.contains(e.target)) {
+                    menu.classList.remove('show');
+                }
+            });
+
+            // --- COLLAPSIBLE SECTION SCRIPT ---
+            window.toggleCollapse = function (header) {
+                const content = header.nextElementSibling;
+                const arrow = header.querySelector(".aroww");
+
+                content.classList.toggle("show");
+
+                if (content.classList.contains("show")) {
+                    arrow.style.transform = "rotate(180deg)";
+                } else {
+                    arrow.style.transform = "rotate(0deg)";
+                }
+            };
+        };
+    </script>
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
         <div id="image">
-            <img src="3Dgame/logo.png" alt="logo">
+            <img src="Assets/logo.png" alt="logo">
         </div>
+
+        <div id="menu-btn" onclick="toggleMenu()">☰</div>
     </header>
+
+    <div class="side-menu" id="sideMenu">
+        <ul>
+            <li><a href="#Hyper-Sphere">Hyper Sphere : 3D Game</a></li>
+            <li><a href="#IQify">IQify : IQ Test Website</a></li>
+            <li><a href="#Digital-Analog-Clock">Digital Analog CLock</a></li>
+            <li><a href="#haunted-horizons">Haunted Horizon : 2D Game</a></li>
+            <li><a href="#portfolio">My Portfolio</a></li>
+        </ul>
+    </div>
+
 
     <div class="projects">
 
-        <div class="project" id="one">
+        <div class="project" id="Hyper-Sphere">
 
-            <h1>3D Game : Hyper Sphere</h1>
-            <div class="feature-block">
-                <div class="text">
-                    <h2>Overview</h2>
-                    <p>Hyper Sphere is an electrifying 3D endless runner that challenges players to navigate a perpetually
-                        rolling sphere through a series of dynamic obstacles and jumps. The game demands precision, quick
-                        reflexes, and strategic maneuvering to achieve high scores. With each level, the difficulty escalates,
-                        pushing players to continually hone their skills.</p>
-                </div>
-                <div class="img">
-                    <img src="3Dgame/a.PNG" alt="Gameplay Screenshot">
-                </div>
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>Hyper Sphere : 3D Game</h1>
+                <span class="aroww">&#9660;</span>
             </div>
 
-            <div class="feature-block">
-                <div class="text">
-                    <h2>Development Journey</h2>
-                    <p>Embarking on this project during the final weeks of my first semester in Software Engineering, I
-                        dedicated approximately 3 to 4 months to bring Hyper Sphere to life. Balancing academic commitments with
-                        game development was a rewarding challenge, culminating in the game's release on Thursday, April 3,
-                        2025. This endeavor not only enhanced my technical proficiency but also deepened my project management
-                        and problem-solving abilities.</p>
+            <div id="hyperSphereContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>Hyper Sphere is an electrifying 3D endless runner that challenges players to navigate a
+                            perpetually
+                            rolling sphere through a series of dynamic obstacles and jumps. The game demands precision,
+                            quick
+                            reflexes, and strategic maneuvering to achieve high scores. With each level, the difficulty
+                            escalates,
+                            pushing players to continually hone their skills.</p>
+                    </div>
+                    <div class="img">
+                        <img src="3Dgame/a.PNG" alt="Gameplay Screenshot">
+                    </div>
                 </div>
-                <div class="img">
-                    <img src="3Dgame/c.PNG" alt="Gameplay Screenshot">
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Development Journey</h2>
+                        <p>Embarking on this project during the final weeks of my first semester in Software
+                            Engineering, I
+                            dedicated approximately 3 to 4 months to bring Hyper Sphere to life. Balancing academic
+                            commitments with
+                            game development was a rewarding challenge, culminating in the game's release on Thursday,
+                            April 3,
+                            2025. This endeavor not only enhanced my technical proficiency but also deepened my project
+                            management
+                            and problem-solving abilities.</p>
+                    </div>
+                    <div class="img">
+                        <img src="3Dgame/c.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Game Features</h2>
+                        <ul>
+                            <li>Dynamic Movement:
+                                <p class="ul">Experience smooth and responsive controls that make navigation intuitive
+                                    and engaging.
+                                </p>
+                            </li>
+                            <li>Challenging Levels:
+                                <p class="ul">Traverse through 8 meticulously designed levels and tackle 5 unique
+                                    missions, each
+                                    escalating in complexity.</p>
+                            </li>
+                            <li>Score Boosters:
+                                <p class="ul">Collect in-game items to amplify your score and climb the leaderboards.
+                                </p>
+                            </li>
+                            <li>Engaging Interface:
+                                <p class="ul">Immerse yourself in a sleek and user-friendly UI that enhances the overall
+                                    gameplay
+                                    experience.
+                                </p>
+                            </li>
+                            <li>Endless Entertainment:
+                                <p class="ul">Test your endurance and skills in an infinite running environment that
+                                    keeps you
+                                    coming back for more.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="3Dgame/d.PNG" alt="Gameplay Screenshot">
+                        <img src="3Dgame/h.PNG" alt="Select Level">
+                        <img src="3Dgame/i.PNG" alt="">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Platform Availability</h2>
+                        <p>To ensure accessibility across various devices, Hyper Sphere is available on multiple
+                            platforms:</p>
+                        <ul>
+                            <li>Windows and macOS:
+                                <p class="ul">Downloadable versions are hosted on itch.io.
+                                    <br>For Windows ~ <a href="https://ahmedammad1709.itch.io/hyper-sphere"
+                                        target="_blank">Click
+                                        here</a>
+                                </p>
+                            </li>
+                            <li>Android:
+                                <p class="ul">A mobile-optimized version is available for Android devices, offering
+                                    on-the-go
+                                    gameplay.
+                                    <br>For Andriod ~ <a href="https://ahmedammad1709.itch.io/hypersphere-for-mobile"
+                                        target="_blank">Click here</a>
+                                </p>
+                            </li>
+                            <li>WebGL:
+                                <p class="ul">Play directly in your browser without the need for downloads. Both on PC
+                                    and Mobile.
+                                    <br>Play Online ~ <a href="https://ahmedammad1709.itch.io/hypersphere-for-web"
+                                        target="_blank">Click here</a>
+                                </p>
+                            </li>
+                            <li>Google Drive:
+                                <p class="ul">Additionally, all versions are accessible via Google Drive for direct
+                                    download.
+                                    <br>Google Drive Link ~ <a
+                                        href="https://drive.google.com/file/d/1bcPJ9Uvs13Ukm2C-fcm2IoYk1pid8B-g/view?usp=drive_link"
+                                        target="_blank">Click here</a>
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="3Dgame/GameMode.PNG" alt="Gameplay Screenshot">
+                        <img src="3Dgame/unity1.PNG" alt="">
+                        <img src="3Dgame/MissionCompleeted.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Development Insights</h2>
+                        <p>Creating Hyper Sphere was an ambitious endeavor that involved implementing physics-based
+                            movement and
+                            designing engaging missions. One of the significant challenges was managing PlayerPrefs
+                            correctly and
+                            optimizing game performance for smooth builds. Overcoming these obstacles made the final
+                            product even
+                            more rewarding.</p>
+                    </div>
+                    <video width="40%" controls="preview.jpg">
+                        <source src="3Dgame/HyperSphereVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
-
-
-            <div class="feature-block">
-                <div class="text">
-                    <h2>Game Features</h2>
-                    <ul>
-                        <li>Dynamic Movement:
-                            <p class="ul">Experience smooth and responsive controls that make navigation intuitive and engaging.
-                            </p>
-                        </li>
-                        <li>Challenging Levels:
-                            <p class="ul">Traverse through 8 meticulously designed levels and tackle 5 unique missions, each
-                                escalating in complexity.</p>
-                        </li>
-                        <li>Score Boosters:
-                            <p class="ul">Collect in-game items to amplify your score and climb the leaderboards.</p>
-                        </li>
-                        <li>Engaging Interface:
-                            <p class="ul">Immerse yourself in a sleek and user-friendly UI that enhances the overall gameplay
-                                experience.​
-                            </p>
-                        </li>
-                        <li>Endless Entertainment:
-                            <p class="ul">Test your endurance and skills in an infinite running environment that keeps you
-                                coming back for more.</p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="img">
-                    <img src="3Dgame/d.PNG" alt="Gameplay Screenshot">
-                    <img src="3Dgame/h.PNG" alt="Select Level">
-                    <img src="3Dgame/i.PNG" alt="">
-                </div>
-            </div>
-
-
-            <div class="feature-block">
-                <div class="text">
-                    <h2>Platform Availability</h2>
-                    <p>To ensure accessibility across various devices, Hyper Sphere is available on multiple platforms:</p>
-                    <ul>
-                        <li>Windows and macOS:
-                            <p class="ul">Downloadable versions are hosted on itch.io.
-                                <br>For Windows ~ <a href="https://ahmedammad1709.itch.io/hyper-sphere" target="_blank">Click
-                                    here</a>
-                            </p>
-                        </li>
-                        <li>Android:
-                            <p class="ul">A mobile-optimized version is available for Android devices, offering on-the-go
-                                gameplay.
-                                <br>For Andriod ~ <a href="https://ahmedammad1709.itch.io/hypersphere-for-mobile"
-                                    target="_blank">Click here</a>
-                            </p>
-                        </li>
-                        <li>WebGL:
-                            <p class="ul">Play directly in your browser without the need for downloads. Both on PC and Mobile.
-                                <br>Play Online ~ <a href="https://ahmedammad1709.itch.io/hypersphere-for-web"
-                                    target="_blank">Click here</a>
-                            </p>
-                        </li>
-                        <li>Google Drive:
-                            <p class="ul">Additionally, all versions are accessible via Google Drive for direct download.
-                                <br>Google Drive Link ~ <a
-                                    href="https://drive.google.com/file/d/1bcPJ9Uvs13Ukm2C-fcm2IoYk1pid8B-g/view?usp=drive_link"
-                                    target="_blank">Click here</a>
-                            </p>
-                        </li>
-                    </ul>
-                </div>
-                <div class="img">
-                    <img src="3Dgame/GameMode.PNG" alt="Gameplay Screenshot">
-                    <img src="3Dgame/MissionCompleeted.PNG" alt="">
-                    <img src="3Dgame/unity2.PNG" alt="Gameplay Screenshot">                   
-                </div>
-            </div>
-
-
-            <div class="feature-block">
-                <div class="text">
-                    <h2>Development Insights</h2>
-                    <p>Creating Hyper Sphere was an ambitious endeavor that involved implementing physics-based movement and
-                        designing engaging missions. One of the significant challenges was managing PlayerPrefs correctly and
-                        optimizing game performance for smooth builds. Overcoming these obstacles made the final product even
-                        more rewarding.</p>
-                </div>
-                <div class="img">
-                        <img src="3Dgame/Visual studio.PNG" alt="Select Level">
-                </div>
-            </div>
-
         </div>
 
 
-        <div class="project" id="two">
-                <h1>IQify Website</h1>
-            
+        <div class="project" id="IQify">
 
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>IQify : IQ Test Website</h1>
+                <span class="aroww">&#9660;</span>
+            </div>
+
+            <div id="IQifyContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>IQify is a smart, fun, and responsive IQ testing platform that allows users to challenge
+                            their minds through a series of well-designed questions and instantly view their results.
+                            The website provides a smooth, engaging experience across all devices, making it accessible
+                            to anyone, anytime.</p>
+                    </div>
+                    <div class="img">
+                        <img src="IQify/homePage.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Project Background</h2>
+                        <p>This was my first-semester project for the Computing Fundamentals course, developed in
+                            collaboration with my university friend Muhammad Farhan. The project was officially deployed
+                            on December 31st, 2024, marking a huge milestone in my learning journey.
+                        <ol>
+                            <li>The Home Page was crafted by Farhan, focused on elegant design and layout.</li>
+                            <li>I developed the Test Page and Result Page, using HTML, CSS, and JavaScript, with an
+                                emphasis
+                                on interactivity and performance.
+                            </li>
+                        </ol>
+                    </div>
+
+                    <div class="img">
+                        <img src="IQify/developers.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Key Highlights</h2>
+                        <ul>
+                            <li>✅ 200+ IQ Tests Taken
+                                <p class="ul">More than 200 users have completed the quiz.</p>
+                            </li>
+                            <li>🌍 Thousands of Visitors
+                                <p class="ul">The website has gained traction with a wide audience.</p>
+                            </li>
+                            <li>🧠 Instant IQ Score
+                                <p class="ul">Users get real-time results after completing the quiz.</p>
+                            </li>
+                            <li>🖨️ Certificate Generation
+                                <p class="ul"> Personalized certificates are generated on the result page.</p>
+                            </li>
+                            <li>📱 Fully Responsive
+                                <p class="ul">Works smoothly on desktop, tablet, and mobile.</p>
+                            </li>
+                            <li>💬 Valuable Feedback
+                                <p class="ul">Appreciated by mentors and elders for its practical implementation.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="IQify/result.jpeg" alt="Gameplay Screenshot">
+                        <img src="IQify/certificate.PNG" alt="Select Level">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Learning Experience</h2>
+                        <p>IQify wasn’t just a website; it was a learning breakthrough. It helped me:</p>
+                        <ol>
+                            <li>Understand real-world frontend development.</li>
+                            <li>Practice DOM manipulation with JavaScript.</li>
+                            <li>Explore UX/UI fundamentals.</li>
+                            <li>Experience how users interact with a product.</li>
+                            <li>Build confidence through community feedback.</li>
+                        </ol>
+
+                    </div>
+                    <div class="img">
+                        <img src="IQify/EnterCredentials.PNG" alt="EnterCredentials">
+                        <img src="IQify/userSays.PNG" alt="User Sayings">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Visit the Project</h2> <br>
+                        <a href="https://ahmedammad1709.github.io/IQify-Website/" target="_blank">~ Visit IQify now </a>
+                    </div>
+                    <video width="40%" controls="preview.jpg">
+                        <source src="IQify/IQify video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
         </div>
 
+        <div class="project" id="Digital-Analog-Clock">
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>Digital Analog CLock Website</h1>
+                <span class="aroww">&#9660;</span>
+            </div>
 
-        <div class="project" id="three">
-            <h1>Digital Analog Clock</h1>
-            <h2>Overview</h2>
+            <div id="IQifyContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>Analog Digital Clock is a sleek, real-time web application that lets users switch between an
+                            analog and digital clock interface — all synced with your system’s actual time. It’s
+                            minimal, responsive, and super functional.</p>
+                    </div>
+                    <div class="img">
+                        <img src="DigitalAnalog/page1.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Project Background</h2>
+                        <p>This was one of my personal passion projects, fully developed by me using HTML, CSS, and
+                            JavaScript. The goal? To create a visually accurate, real-time clock that mimics the
+                            behavior of a real-world timepiece — both in analog and digital forms.</p>
+                    </div>
+
+                </div>
 
 
-        </div>
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Key Features</h2>
+                        <ul>
+                            <li>🕰️ Analog & Digital Modes
+                                <p class="ul">Instantly toggle between the two styles.</p>
+                            </li>
+                            <li>⏱️ Live Real-Time Movement
+                                <p class="ul">Syncs directly with your device clock.</p>
+                            </li>
+                            <li>💡 Clean UI & Smooth Animation
+                                <p class="ul">Designed for simplicity and clarity.</p>
+                            </li>
+                            <li>📱 Fully Responsive
+                                <p class="ul">Works seamlessly across all screen sizes</p>
+                            </li>
+                            <li>🧠 No External Libraries
+                                <p class="ul">Pure vanilla JavaScript for logic and DOM updates.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="DigitalAnalog/page2.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
 
-       
 
-        <div class="project" id="four">4
-            <div>
-                <h1>2D Game : Haunted Horizon</h1>
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>What I Learned</h2>
+                        <p>Working on this project taught me the importance of time APIs and deepened my understanding
+                            of:</p>
+                        <ol>
+                            <li>Date and setInterval in JavaScript</li>
+                            <li>DOM manipulation and UI updates.</li>
+                            <li>Handling user interaction dynamically.</li>
+                            <li>Building from scratch without frameworks.</li>
+                        </ol>
+                        <p>It was a hands-on way to sharpen my JS logic and UI/UX skills — and I loved every second of
+                            it (pun intended 😄).</p>
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Try It Yourself</h2> <br>
+                        <a href="https://ahmedammad1709.github.io/Analog-Digital-Clock/" target="_blank">Live Demo - DIgital Analog
+                            Clock </a>
+                    </div>
+                </div>
             </div>
         </div>
 
 
+        <div class="project" id="haunted-horizons">
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>Haunted Horizons : 2D Game</h1>
+                <span class="aroww">&#9660;</span>
+            </div>
+
+            <div id="IQifyContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>Haunted Horizons is a thrilling 2D platformer game developed in Unity using C#, where
+                            survival is everything. From dodging creepy creatures to chasing high scores, players are
+                            dropped into a spooky world full of random enemy spawns and intense platforming action.</p>
+                    </div>
+                    <div class="img">
+                        <img src="Haunted Horizons/MainMenu.PNG" alt="Main Menu">
+                    </div>
+                </div>
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Project Background</h2>
+                        <p>TThis was my Computer Programming Course Project during my first semester, and I developed
+                            the entire game solo — from core gameplay logic to UI design. It was not only my
+                            introduction to Unity but also a deep dive into game development, and I enjoyed every bit of
+                            the learning process.</p>
+                        <ol>
+                            <li>📅 Deployed on: November 24, 2024</li>
+                            <li>💻 Platform: Windows</li>
+                            <li>💾 Downloadable for Free</li>
+                        </ol>
+                    </div>
+                    <div class="img">
+                        <img src="Haunted Horizons/home.PNG" alt="GamePlay">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Gameplay Highlights</h2>
+                        <ul>
+                            <li>👾 Three Monster Types
+                                <p class="ul">Enemies spawn randomly from both sides of the screen.</p>
+                            </li>
+                            <li>🕹️ Two Playable Characters
+                                <p class="ul">Choose your favorite and get jumping.</p>
+                            </li>
+                            <li>🔼 Score System
+                                <p class="ul">Jump over monsters to earn points (💯 +10 for every jump!)</p>
+                            </li>
+                            <li>🏁 High Score System
+                                <p class="ul">Keeps track of your top performance.</p>
+                            </li>
+                            <li>🚫 Game Over System
+                                <p class="ul">Fall or collide and it's game over!.</p>
+                            </li>
+                            <li>🎨 UI Design
+                                <p class="ul">Clean, custom-designed game menus and HUD.</p>
+                            </li>
+                            <li>💾 PlayerPrefs Integration
+                                <p class="ul">Persistent scores and settings across sessions.</p>
+                            </li>
+                            <li>🎬 Smooth Animations
+                                <p class="ul"> From jumping to game transitions.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="Haunted Horizons/home2.PNG" alt="HomeScene2">
+                        <img src="Haunted Horizons/gameOver.PNG" alt="HomeScene2">
+                        <img src="Haunted Horizons/hauntedhorizonsUnity.PNG" alt="HomeScene2">
+                        <img src="Haunted Horizons/hauntedHorizonsUnity2.PNG" alt="HomeScene2">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>What I Learned</h2>
+                        <p>This project became my hands-on gateway to the world of game development. Some of the most
+                            valuable things I learned include:</p>
+                        <ol>
+                            <li>Unity scene management.</li>
+                            <li>Using PlayerPrefs for saving data.</li>
+                            <li>Scripting in C# for gameplay mechanics.</li>
+                            <li>Creating and managing animations and UI.</li>
+                            <li>Designing responsive gameplay for PC.</li>
+                        </ol>
+                        <p>IIt taught me how to bring all the components of a game together — art, logic, interactivity
+                            — into a fully functional and exciting experience.</p>
+                    </div>
+
+                    <div class="img">
+                        <img src="Haunted Horizons/VS2.PNG" alt="HomeScene2">
+                        <img src="Haunted Horizons/VS.PNG" alt="HomeScene2">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Play the Game</h2> <br>
+                        <p>🕹️Totally Free ~ <a href="https://ahmedammad1709.itch.io/haunted-horizons" target="_blank">Download Haunted
+                                Horizons</a></p>
+                        <p>Want to test your reflexes and beat the high score? Jump into the haunted world now — but
+                            beware, the monsters are always watching... 👻</p>
+                    </div>
+                    <video width="40%" controls="preview.jpg">
+                        <source src="Haunted Horizons/Haunted Horizons 2025-04-11 20-06-48.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="project" id="portfolio">
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>My Portfolio</h1>
+                <span class="aroww">&#9660;</span>
+            </div>
+
+            <div id="IQifyContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>This is my personal developer portfolio website, built entirely by me to showcase my passion,
+                            skills, and projects in web development and game development. It acts as my digital resume
+                            and professional identity — a place where visitors can learn about me, explore my work, and
+                            connect with me easily.</p>
+                        <ol>
+                            <li>📅 First Deployed: December 9, 2024</li>
+                            <li>💻 Technology Used: HTML, CSS, JavaScript</li>
+                            <li>🔧 Source Control: Fully version-controlled on GitHub</li>
+                        </ol>
+                    </div>
+                    <div class="img">
+                        <img src="OwnPortfolioPics/home.PNG" alt="Main Menu">
+                        <img src="OwnPortfolioPics/aboutMe.PNG" alt="About Me">
+                    </div>
+                </div>
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Features</h2>
+                        <ul>
+                            <li>📁 Project Showcases
+                                <p class="ul">All of my major personal and academic projects, including games and
+                                    websites, are presented with detailed descriptions, images, and external links.</p>
+                            </li>
+                            <li>📱 Fully Responsive Design
+                                <p class="ul">eamlessly adapts across all devices, from desktops to smartphones.</p>
+                            </li>
+                            <li>🧭 Smooth Navigation
+                                <p class="ul">Clean and minimal layout with clear sections like About Me, Skills,
+                                    Projects, and Contact.</p>
+                            </li>
+                            <li>🧠 Live Updates via GitHub
+                                <p class="ul">Since it’s hosted through GitHub Pages, visitors can even view my commit
+                                    history to track changes, improvements, and updates over time.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="OwnPortfolioPics/aboutMe.PNG" alt="About Me">
+                        <img src="OwnPortfolioPics/skills.PNG" alt="About Me">
+                        <img src="OwnPortfolioPics/work.PNG" alt="About Me">
+                    </div>
+                </div>  
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Structure</h2>
+                        <p>The portfolio is divided into 5 main sections to ensure a smooth user experience:</p>
+                        <ul>
+                            <li>🏠 Home
+                                <p class="ul">A warm introduction and welcoming vibe.</p>
+                            </li>
+                            <li>👤 About
+                                <p class="ul">A brief look into who I am and what drives me.</p>
+                            </li>
+                            <li>💡 My Skills
+                                <p class="ul">Technologies and tools I’ve mastered.</p>
+                            </li>
+                            <li>🛠️ My Work
+                                <p class="ul">A showcase of my top projects.</p>
+                            </li>
+                            <li>📬 Contact
+                                <p class="ul">Easy ways to reach out to me.</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="OwnPortfolioPics/contact.PNG" alt="HomeScene2">
+                        <img src="OwnPortfolioPics/footer.PNG" alt="About Me">
+                        <img src="OwnPortfolioPics/projects.PNG" alt="About Me">
+
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>What Makes It Special?</h2>
+                        <p>This portfolio isn’t just a static page — it’s the hub of my digital journey. I keep it
+                            updated as I grow in experience and explore new technologies. Creating it taught me how to:
+                        </p>
+                        <ol>
+                            <li>Design layouts that balance information and aesthetics.</li>
+                            <li>Write modular and maintainable code.</li>
+                            <li>Showcase my identity and work with confidence on the web.</li>
+                        </ol>
+                        <p>Whether you're a recruiter, collaborator, or curious visitor, this site gives you a complete
+                            insight into who I am and what I do.</p>
+                            <p>Visit my Portfolio ~ <a href="https://ahmedammad1709.github.io/My-Portfolio/" target="_blank">Click Here</a></p>
+                    </div>
+
+                    <video width="40%" controls="preview.jpg" style="margin-top: 70px;">
+                        <source src="OwnPortfolioPics/WhatsApp Video 2025-04-11 at 10.27.30 PM.mp4" type="video/mp4">
+                    </video>
+                </div>
+
+            </div>
+        </div>
     </div>
+
+    <!-- ---------------------------- -->
+<footer>
+    <div  id="footerOne">
+        <div class="image">
+            <img src="Assets/logo.png" alt="Logo">
+        </div>
+        <p>Crafting Code with <br>Logic & Passion.</p>
+    </div>
+
+    <div class="footerbody" id="footerTwo">
+        <h2>Quick links</h2>
+        <a href="">Home</a>
+        <a href="">About Me</a>
+        <a href="">My Skills</a>
+        <a href="">My Work</a>
+        <a href="">Contact Me</a>
+    </div>
+    
+    <div class="footerbody">
+        <h2>Legal</h2>
+        <a href="">Privacy Policy</a>
+        <a href="">Terms Of Services</a>
+        <a href="">Cookie Policy</a>
+    </div>
+
+    <div class="footerbody" id="footerfour">
+        <h2>Contact Me</h2>
+        <p>Email : ahmedammad2006@gmail.com</p>
+        <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ammadofficial@gmail.com</p>
+        <ul class="socials">
+            <li><a href="https://www.facebook.com/profile.php?id=100069493475592" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
+            <li><a href="https://github.com/ahmedammad1709" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
+            <li><a href="https://www.linkedin.com/in/ammad-ahmed-608156338/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
+            <li>
+                <a href="https://ahmedammad1709.itch.io/" target="_blank">
+                    <i class="fab fa-itch-io"></i>
+                </a>
+            </li>
+            <li><a href="https://www.instagram.com/ammad_innovates/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
+        </ul>
+    </div>
+</footer>
+
+<div class="rights">
+    <p>Ammad Ahmed | All Rights Reserved</p>
+</div>
+
+<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
 </body>
 
