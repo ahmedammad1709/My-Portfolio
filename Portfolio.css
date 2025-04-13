@@ -10,18 +10,21 @@ body{
 
 header {
     display: flex;
-    justify-content: space-between;
+    position: fixed;
+    width: 100%;
     align-items: center;
-    height: 60px;
-    background-color: #1E1E2F;
-    /* border: 2px solid red; */
+    justify-content: space-between;
+    height: 55px;
+    background: rgba(30, 30, 47, 0.7); /* semi-transparent */
+    backdrop-filter: blur(10px); /* blur effect */
+    -webkit-backdrop-filter: blur(10px); /* for Safari */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-weight: bold;
-    padding: 0 20px;
+    z-index: 999;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* optional line */
 }
 
 header #image img {
-    height: 75px;
+    height: 70px;
 }
 
 header ul {
