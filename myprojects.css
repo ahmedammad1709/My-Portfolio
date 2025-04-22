@@ -29,7 +29,10 @@ header #image img {
     height: 70px;
 }
 
-  
+.name span{
+    color: #00BFFF;
+}
+
  /* Side menu styling */
 .side-menu {
     position: fixed;
