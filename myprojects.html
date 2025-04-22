@@ -61,12 +61,15 @@
         <div id="image">
             <img src="Assets/logo.png" alt="logo">
         </div>
-
+        <div class="name">
+            <h1>My <span>Projects</span></h1>
+        </div>
         <div id="menu-btn" onclick="toggleMenu()">☰</div>
     </header>
 
     <div class="side-menu" id="sideMenu">
         <ul>
+            <li><a href="#TODO-List">TODOs List Website</a></li>
             <li><a href="#Hyper-Sphere">Hyper Sphere : 3D Game</a></li>
             <li><a href="#IQify">IQify : IQ Test Website</a></li>
             <li><a href="#Digital-Analog-Clock">Digital Analog CLock</a></li>
@@ -77,6 +80,129 @@
 
 
     <div class="projects">
+
+        <div class="project" id="TODO-List" style="margin-top: 10px;">
+
+
+            <div class="collapsible-header" onclick="toggleCollapse(this)">
+                <h1>TODOs List Website</h1>
+                <span class="aroww">&#9660;</span>
+            </div>
+
+            <div id="hyperSphereContent" class="collapsible-content">
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Overview</h2>
+                        <p>ToDo Pulse is a sleek and intuitive to-do list web application designed to help users stay
+                            organized and productive. Built with HTML, CSS, Bootstrap, and JavaScript, this app offers a
+                            seamless task management experience across devices. With features like task persistence
+                            using Local Storage, interactive UI, and real-time date display, it’s your everyday
+                            productivity companion.</p>
+                    </div>
+                    <div class="img">
+                        <img src="TodoList/page1.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Development Journey</h2>
+                        <p>This project marked a pivotal moment in my journey as a web developer. I built it during my
+                            early days of learning JavaScript and spent dedicated time understanding DOM manipulation,
+                            event handling, and data persistence in the browser. It was both a creative outlet and a
+                            deep dive into the foundational mechanics of web interactivity.</p>
+                    </div>
+                    <div class="img">
+                        <img src="TodoList/page2.PNG" alt="Gameplay Screenshot">
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>App Features</h2>
+                        <ul>
+                            <li>Clean UI & Responsive Design:
+                                <p class="ul">Built with Bootstrap, the app adapts beautifully to any screen size,
+                                    whether you're on desktop or mobile.
+                                </p>
+                            </li>
+                            <li>Task Management Made Simple:
+                                <p class="ul">Add, delete, or mark tasks as complete with smooth transitions and visual
+                                    feedback.</p>
+                            </li>
+                            <li>Real-Time Date Display:
+                                <p class="ul">Automatically updates the day and date using the browser’s clock.
+                                </p>
+                            </li>
+                            <li>Local Storage Integration:
+                                <p class="ul">All your tasks are saved in the browser, even after you close the tab.
+                                </p>
+                            </li>
+                            <li>Smooth Interactions:
+                                <p class="ul">Subtle animations enhance the user experience without getting in the way.
+                                    .</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="TodoList/footer.PNG" alt="Gameplay Screenshot">
+                        <img src="TodoList/addtolist.PNG" alt="Gameplay Screenshot">
+                        
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>Technology Stack</h2>
+                      
+                        <ul>
+                            <li>Frontend:
+                                <p class="ul">HTML, CSS, JavaScript.
+                                </p>
+                            </li>
+                            <li>Frameworks:
+                                <p class="ul">Bootstrap.
+                                </p>
+                            </li>
+                            <li>Browser API Usage:
+                                <p class="ul">DOM Manipulation, Event Listeners, Local Storage.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="img">
+                        <img src="TodoList/clearList.PNG" alt="Gameplay Screenshot">
+                        
+                    </div>
+                </div>
+
+
+                <div class="feature-block">
+                    <div class="text">
+                        <h2>What I Learned</h2>
+                        <p>Creating ToDo Pulse helped me understand the core mechanisms of JavaScript, especially:
+                        </p>
+                        <ol>
+                            <li>DOM selection and manipulation.</li>
+                            <li>Event-driven programming with listeners.</li>
+                            <li>Data handling using localStorage.</li>
+                            <li>Cross-browser styling using Bootstrap.</li>
+                        </ol>
+                        <p>This project significantly sharpened my front-end skills and gave me confidence in building
+                            dynamic, responsive web applications.</p>
+                    </div>
+                    <video width="40%" controls="preview.jpg" class="video">
+                        <source src="TodoList/ToDoListVideo.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div class="project" id="Hyper-Sphere">
 
@@ -219,7 +345,7 @@
                             more rewarding.</p>
                     </div>
                     <video width="40%" controls="preview.jpg" class="video">
-                        <source src="3Dgame/HyperSphereVideo - Trim.mp4" type="video/mp4">
+                        <source src="3Dgame/HyperSphereVideo.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -294,8 +420,8 @@
                         </ul>
                     </div>
                     <div class="img">
-                        <img src="IQify/result.jpeg" alt="Result">
-                        <img src="IQify/certificate.PNG" alt="Certificate">
+                        <img src="IQify/result.jpeg" alt="Gameplay Screenshot">
+                        <img src="IQify/certificate.PNG" alt="Select Level">
                     </div>
                 </div>
 
@@ -325,9 +451,9 @@
                         <h2>Visit the Project</h2> <br>
                         <a href="https://ahmedammad1709.github.io/IQify-Website/" target="_blank">~ Visit IQify now </a>
                     </div>
-                    <video width="40%" controls="preview.jpg" class="video">
-                        <source src="IQify/IQify video - Trim.mp4" type="video/mp4">
-                    
+                    <video width="40%" controls="preview.jpg">
+                        <source src="IQify/IQify video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
                     </video>
                 </div>
             </div>
@@ -410,7 +536,8 @@
                 <div class="feature-block">
                     <div class="text">
                         <h2>Try It Yourself</h2> <br>
-                        <a href="https://ahmedammad1709.github.io/Analog-Digital-Clock/" target="_blank">Live Demo - DIgital Analog
+                        <a href="https://ahmedammad1709.github.io/Analog-Digital-Clock/" target="_blank">Live Demo -
+                            DIgital Analog
                             Clock </a>
                     </div>
                 </div>
@@ -521,13 +648,14 @@
                 <div class="feature-block">
                     <div class="text">
                         <h2>Play the Game</h2> <br>
-                        <p>🕹️Totally Free ~ <a href="https://ahmedammad1709.itch.io/haunted-horizons" target="_blank">Download Haunted
+                        <p>🕹️Totally Free ~ <a href="https://ahmedammad1709.itch.io/haunted-horizons"
+                                target="_blank">Download Haunted
                                 Horizons</a></p>
                         <p>Want to test your reflexes and beat the high score? Jump into the haunted world now — but
                             beware, the monsters are always watching... 👻</p>
                     </div>
-                    <video width="40%" controls="preview.jpg" class="video">
-                        <source src="Haunted Horizons/HauntedHorizons.mp4" type="video/mp4">
+                    <video width="40%" controls="preview.jpg">
+                        <source src="Haunted Horizons/Haunted Horizons 2025-04-11 20-06-48.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -586,7 +714,7 @@
                         <img src="OwnPortfolioPics/skills.PNG" alt="About Me">
                         <img src="OwnPortfolioPics/work.PNG" alt="About Me">
                     </div>
-                </div>  
+                </div>
 
 
                 <div class="feature-block">
@@ -633,10 +761,11 @@
                         </ol>
                         <p>Whether you're a recruiter, collaborator, or curious visitor, this site gives you a complete
                             insight into who I am and what I do.</p>
-                            <p>Visit my Portfolio ~ <a href="https://ahmedammad1709.github.io/My-Portfolio/" target="_blank">Click Here</a></p>
+                        <p>Visit my Portfolio ~ <a href="https://ahmedammad1709.github.io/My-Portfolio/"
+                                target="_blank">Click Here</a></p>
                     </div>
 
-                    <video width="40%" controls="preview.jpg" class="video" style="margin-top: 70px;" >
+                    <video width="40%" controls="preview.jpg" style="margin-top: 70px;">
                         <source src="OwnPortfolioPics/WhatsApp Video 2025-04-11 at 10.27.30 PM.mp4" type="video/mp4">
                     </video>
                 </div>
@@ -646,53 +775,57 @@
     </div>
 
     <!-- ---------------------------- -->
-<footer>
-    <div  id="footerOne">
-        <div class="image">
-            <img src="Assets/logo.png" alt="Logo">
+    <footer>
+        <div id="footerOne">
+            <div class="image">
+                <img src="Assets/logo.png" alt="Logo">
+            </div>
+            <p>Crafting Code with <br>Logic & Passion.</p>
         </div>
-        <p>Crafting Code with <br>Logic & Passion.</p>
+
+        <div class="footerbody" id="footerTwo">
+            <h2>Quick links</h2>
+            <a href="">Home</a>
+            <a href="">About Me</a>
+            <a href="">My Skills</a>
+            <a href="">My Work</a>
+            <a href="">Contact Me</a>
+        </div>
+
+        <div class="footerbody">
+            <h2>Legal</h2>
+            <a href="">Privacy Policy</a>
+            <a href="">Terms Of Services</a>
+            <a href="">Cookie Policy</a>
+        </div>
+
+        <div class="footerbody" id="footerfour">
+            <h2>Contact Me</h2>
+            <p>Email : ahmedammad2006@gmail.com</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ammadofficial@gmail.com</p>
+            <ul class="socials">
+                <li><a href="https://www.facebook.com/profile.php?id=100069493475592" target="_blank"><ion-icon
+                            name="logo-facebook"></ion-icon></a></li>
+                <li><a href="https://github.com/ahmedammad1709" target="_blank"><ion-icon
+                            name="logo-github"></ion-icon></a></li>
+                <li><a href="https://www.linkedin.com/in/ammad-ahmed-608156338/" target="_blank"><ion-icon
+                            name="logo-linkedin"></ion-icon></a></li>
+                <li>
+                    <a href="https://ahmedammad1709.itch.io/" target="_blank">
+                        <i class="fab fa-itch-io"></i>
+                    </a>
+                </li>
+                <li><a href="https://www.instagram.com/ammad_innovates/" target="_blank"><ion-icon
+                            name="logo-instagram"></ion-icon></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <div class="rights">
+        <p>Ammad Ahmed | All Rights Reserved</p>
     </div>
 
-    <div class="footerbody" id="footerTwo">
-        <h2>Quick links</h2>
-        <a href="">Home</a>
-        <a href="">About Me</a>
-        <a href="">My Skills</a>
-        <a href="">My Work</a>
-        <a href="">Contact Me</a>
-    </div>
-    
-    <div class="footerbody">
-        <h2>Legal</h2>
-        <a href="">Privacy Policy</a>
-        <a href="">Terms Of Services</a>
-        <a href="">Cookie Policy</a>
-    </div>
-
-    <div class="footerbody" id="footerfour">
-        <h2>Contact Me</h2>
-        <p>Email : ahmedammad2006@gmail.com</p>
-        <p>&nbsp;&nbsp;&nbsp;&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ammadofficial@gmail.com</p>
-        <ul class="socials">
-            <li><a href="https://www.facebook.com/profile.php?id=100069493475592" target="_blank"><ion-icon name="logo-facebook"></ion-icon></a></li>
-            <li><a href="https://github.com/ahmedammad1709" target="_blank"><ion-icon name="logo-github"></ion-icon></a></li>
-            <li><a href="https://www.linkedin.com/in/ammad-ahmed-608156338/" target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a></li>
-            <li>
-                <a href="https://ahmedammad1709.itch.io/" target="_blank">
-                    <i class="fab fa-itch-io"></i>
-                </a>
-            </li>
-            <li><a href="https://www.instagram.com/ammad_innovates/" target="_blank"><ion-icon name="logo-instagram"></ion-icon></a></li>
-        </ul>
-    </div>
-</footer>
-
-<div class="rights">
-    <p>Ammad Ahmed | All Rights Reserved</p>
-</div>
-
-<script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
 
 </body>
 
