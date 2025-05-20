@@ -247,6 +247,9 @@ header ul li a:hover{
         width: 150px;
         height: 150px;
     }
+    .main .info h2 {
+        padding-top: 20px;
+    }
 }
 
 /* ----ABout Section -----*/
